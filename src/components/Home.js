@@ -5,9 +5,9 @@ const Home = () => {
         <div className="space-padding">
             <h1>Reto Buena People</h1>
             <h2>Bienvenido!</h2>
-            <p>En el menu encontrara las opciones para crear usuarios y listar usuarios donde podra
-                buscar un usuario por nombre y apellido, ver los hobbies por usuario, agregar hobbies 
-                y eliminar un usuario.
+            <p>En el menú encontrara las opciones para crear usuarios y listar usuarios donde podrá 
+                buscar un usuario por nombre y apellido, ver los hobbies por usuario, agregar hobbies y 
+                eliminar un usuario. 
             </p>
         </div>
     );

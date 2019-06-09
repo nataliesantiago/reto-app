@@ -23,7 +23,7 @@ class User extends Component {
 
     deleteOne = async (id, removeUser) => {
         const willDelete = await swal({
-            text: "Esta seguro que desea eliminar el usuario?",
+            text: "¿Está seguro que desea eliminar el usuario? ",
             icon: "warning",
             dangerMode: true,
         });
