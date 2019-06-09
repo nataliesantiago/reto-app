@@ -53,23 +53,25 @@ class CreateHobbie extends Component {
         
         let data  = await addHobbies(this.props.id, this.state.selectedHobbies);
         if(data.success){
-            swal("Hobbies seleccionados con exito")
+            swal("", "Hobbies seleccionados con exito", "success")
         }else{
-            swal("Hobbies no seleccionados con exito")
+            swal("", "No se seleccionaron hobbies", "error")
         }
     }
 
     render(){
         return (
-            <div>
+            <div className="container-hobbies">
+                <h3>Lista de hobbies</h3>
                 <form onSubmit={this.addHobbie}>
                     {
                         this.state.hobbies.map((hobbie, key) => (
                             <div key={key}>
-                                <input ref={this.selectedHobbies} onChange={this.handleInputChange} 
-                                       checked={hobbie.checked}  type="checkbox" value={hobbie._id}></input>
-                                <label>
+                                <label className="container-check">
                                     {hobbie.name}
+                                    <input ref={this.selectedHobbies} onChange={this.handleInputChange} 
+                                       checked={hobbie.checked}  type="checkbox" value={hobbie._id}/>
+                                    <span className="checkmark"></span>
                                 </label>
                                 <p>
                                     {hobbie.description}
@@ -77,7 +79,7 @@ class CreateHobbie extends Component {
                             </div>
                         ))
                     }
-                    <button>Guardar</button>
+                    <button className="btn btn-primary">Guardar</button>
                 </form>
             </div>
         );

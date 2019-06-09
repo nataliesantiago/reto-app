@@ -22,42 +22,43 @@ class ListUsers extends Component {
             "hobbies": []
         }
         let data  = await createUser(dataUser);
-        console.log(data)
         if(data.success){
-            swal("Usuario creado con exito")
+            swal("","Usuario creado con exito", "success")
         }else{
-            swal("El usuario no fue creado")
+            swal("", "Por favor ingrese todos los campos del formulario", "error")
         }
     }
 
     render() {
         return (
-            <div className="space-padding middle-width">
+            <div className="space-padding">
                 <h1>Crear Usuario</h1>
                 <p>Por favor ingrese la siguiente información</p>
-                <form onSubmit={this.addUser}>
-                    <div className="form-group row">
-                        <label className="col-sm-4 col-form-label">Nombre</label>
-                        <input className="col-sm-6 form-control" ref={this.inputName} type="text"></input>
-                    </div>
-                    <div className="form-group row">
-                        <label className="col-sm-4 col-form-label">Apellido</label>
-                        <input className="col-sm-6 form-control" ref={this.inputLastName} type="text"></input>
-                    </div>
-                    <div className="form-group row">
-                        <label className="col-sm-4 col-form-label">Documento de identificación</label>
-                        <input className="col-sm-6 form-control" ref={this.inputDocument} type="text"></input>
-                    </div>
-                    <div className="form-group row">
-                        <label className="col-sm-4 col-form-label">Contraseña</label>
-                        <input className="col-sm-6 form-control" ref={this.inputPassword} type="password"></input>
-                    </div>
-                    <div className="form-group row">
-                        <label className="col-sm-4 col-form-label">Fecha de nacimiento</label>
-                        <input className="col-sm-6 form-control" ref={this.inputBirthDay} type="date"></input>
-                    </div>
-                    <button className="btn btn-primary">Enviar</button>
-                </form>
+                <div className="middle-width">
+                    <form onSubmit={this.addUser}>
+                        <div className="form-group row">
+                            <label className="col-sm-6 col-form-label">Nombre</label>
+                            <input className="col-sm-6 form-control" ref={this.inputName} type="text"></input>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-6 col-form-label">Apellido</label>
+                            <input className="col-sm-6 form-control" ref={this.inputLastName} type="text"></input>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-6 col-form-label">Documento de identificación</label>
+                            <input className="col-sm-6 form-control" ref={this.inputDocument} type="text"></input>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-6 col-form-label">Contraseña</label>
+                            <input className="col-sm-6 form-control" ref={this.inputPassword} type="password"></input>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-6 col-form-label">Fecha de nacimiento</label>
+                            <input className="col-sm-6 form-control" ref={this.inputBirthDay} type="date"></input>
+                        </div>
+                        <button className="btn btn-primary btn-25">Enviar</button>
+                    </form>
+                </div>
             </div>
         );
     }

@@ -2,8 +2,8 @@ import React from 'react';
 
 const HobbiesUser = ({hobbies}) => {
     return (
-        <div>
-            <h1>Lista de hobbies</h1>
+        <div className="container-list-hobbie">
+            <h1>Hobbies</h1>
             <ul>
                 {hobbies.map((hobbie, key) => (
                     <li key={key}>

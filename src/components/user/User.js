@@ -12,9 +12,7 @@ class User extends Component {
     hobbies = async (id) => {
         let allHobbies = await seeHobbies(id);
         if(allHobbies.hobbies.length === 0){
-            swal(
-                <h1>No se han encontrado hobbies</h1>
-            )    
+            swal("", "No se han encontrado hobbies", "error")    
         }else{
             swal(
                 <HobbiesUser hobbies={allHobbies.hobbies} />
@@ -55,22 +53,28 @@ class User extends Component {
         const {user, removeUser} = this.props;
         return (
         
-            <div>
-                <div>
-                    <span>Nombre</span>
+            <div className="row justify-content-md-center space-padding container-users">
+                <div className="col col-lg-2">
+                    <span>Nombre y Apellido</span>
                     <p>{user.firstName} {user.lastName}</p>
                 </div>
-                <div>
+                <div className="col col-lg-2">
                     <span>Documento</span>
                     <p>{user.documentId}</p>
                 </div>
-                <div>
+                <div className="col col-lg-2">
                     <span>Fecha Nacimiento</span>
                     <p>{moment(user.birthDay).format('DD-MM-YYYY')}</p>
                 </div>
-                <button onClick={() => this.hobbies(user._id)}>Ver hobbies</button>
-                <button onClick={() => this.setOpen()}>Agregar hobbies</button>
-                <button onClick={() => this.deleteOne(user._id, removeUser)}>Eliminar usuario</button>
+                <div className="col-md-auto">
+                    <button className="btn btn-primary" onClick={() => this.hobbies(user._id)}>Ver hobbies</button>
+                </div>
+                <div className="col-md-auto">
+                    <button className="btn btn-success" onClick={() => this.setOpen()}>Agregar hobbies</button>
+                </div>
+                <div className="col-md-auto">
+                    <button className="btn btn-danger" onClick={() => this.deleteOne(user._id, removeUser)}>Eliminar usuario</button>
+                </div>
                 {
                     this.state.isOpen ?  <CreateHobbie id={user._id}/> : ''
                 }

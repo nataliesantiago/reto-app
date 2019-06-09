@@ -5,3 +5,115 @@
     width: 50%;
     margin: 0 auto;
 }
+.btn-25{
+    width: 25%;
+}
+.search-container{
+    align-items: flex-end;
+    width: 60%;
+    margin: 0 auto;
+    .btn-primary{
+        width: 60%;
+    }
+}
+.container-users{
+    border-bottom: 1px solid #c3c3c3;
+    &:last-child{
+        border-bottom: none;
+    }
+    span{
+        font-weight: bold;
+    }
+}
+.container-hobbies{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 4vh;
+    .container-check {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 18px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        &:hover{
+            input{
+                & ~ .checkmark {
+                    background-color: #eee;
+                }
+            }
+        }
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+            &:checked{
+                & ~ .checkmark {
+                    background-color: #2196F3;
+                    border: none;
+                    &:after{
+                        display: block;
+                    }
+                }
+            }
+        }
+        .checkmark {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #ffffff;
+            border: 1px solid #c3c3c3;
+            &:after{
+                content: "";
+                position: absolute;
+                display: none;
+                left: 8px;
+                top: 4px;
+                width: 5px;
+                height: 10px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+    }
+    p{
+        padding-left: 35px;
+    }
+}
+.container-list-hobbie{
+    ul{
+        padding: 15px;
+        li{
+            text-align: left;
+            list-style: none;
+            &:before{
+                content: "";
+                background-color: #007bff;
+                font-weight: bold;
+                display: inline-block; 
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                margin-left: -8px;
+            }
+            span{
+                font-weight: bold;
+            }
+            span, p{
+                padding-left: 15px;
+            }
+        }
+    }
+}

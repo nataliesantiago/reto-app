@@ -23,7 +23,7 @@ class ListUsers extends Component {
     getSearchUser = async (firstName, lastName) => {
         let users = await searchUser(firstName, lastName);
         if(users.data.length === 0){
-            swal("No se encontraron coincidencias")
+            swal("No se encontraron coincidencias", "Por favor ingrese un nombre y apellido validos", "error")
         }
         this.setState({users: users.data})
     }

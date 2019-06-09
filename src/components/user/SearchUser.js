@@ -12,19 +12,22 @@ class ListUsers extends Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.findUser}>
-                    <div>
+            
+            <form onSubmit={this.findUser}>
+                <div className="form-row search-container">
+                    <div className="col-md-4 mb-3">
                         <label>Nombre</label>
-                        <input ref={this.inputName} type="text"></input>
+                        <input className="form-control" ref={this.inputName} type="text"></input>
                     </div>
-                    <div>
+                    <div className="col-md-4 mb-3">
                         <label>Apellido</label>
-                        <input ref={this.inputLastName} type="text"></input>
+                        <input className="form-control" ref={this.inputLastName} type="text"></input>
                     </div>
-                    <button>Buscar</button>
-                </form>
-            </div>
+                    <div className="col-md-4 mb-3">
+                        <button className="btn btn-primary">Buscar</button>
+                    </div>
+                </div>
+            </form>
         );
     }
 }
